@@ -1,0 +1,44 @@
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+
+#nav-bar {
+  background-color: #00A087;
+  height: 80px;
+  width: 100%;
+  margin: 0;
+  padding: 0 2em;
+  position: fixed;
+}
+
+#nav-bar .logo {
+  padding: 0;
+  display: inline-block;
+  float: left;
+  width: 80px;
+  height: 80px;
+}
+
+#nav-bar .header {
+  /*display: inlinelock;*/
+  color: #e8fdff;
+  margin-left: 10px;
+  line-height: 75px;
+  position: absolute;
+  font-size: 2em;
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+  float: left;
+}
+
+#compose-button {
+  float: right;
+}
+
+
+
+/*
+ * Additional CSS can be defined below or in other CSS files, as per instructions
+ */
