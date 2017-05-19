@@ -11,6 +11,7 @@
   margin: 0;
   padding: 0 2em;
   position: fixed;
+  z-index: 2;
 }
 
 #nav-bar .logo {
@@ -22,7 +23,6 @@
 }
 
 #nav-bar .header {
-  /*display: inlinelock;*/
   color: #e8fdff;
   margin-left: 10px;
   line-height: 75px;
@@ -46,6 +46,7 @@
   padding: 12px 20px;
   vertical-align: middle;
   margin-top: 15px;
+  border-radius: 3px;
 
 }
 

@@ -94,18 +94,20 @@ $(document).ready(function() {
 
   $("#tweet-form").on("submit", (event) => {
     event.preventDefault();
-    console.log($("#tweet-form").serialize());
     $("#tweet-error").text("")
     const newTweetName = $('#tweet-input').val();
 
     if (newTweetName == "") {
       $("#tweet-error").text("Please enter a tweet!")
+      $(".counter").addClass("gone"); //Removes the counter
       return
       } else if (newTweetName.length > 140) {
         $("#tweet-error").text("Tweet too long!")
+        $(".counter").addClass("gone"); //Removes the counter
         return
       } else {
 
+      $(".counter").removeClass("gone"); //Replaces the counter
       $.ajax({
         url: '/tweets/new',
         method: 'POST',
@@ -118,18 +120,13 @@ $(document).ready(function() {
 
         const html = createTweetElement(tweet);
         $('#tweet-container').prepend(html);
-        $('#tweet-name').val('').focus();
+        $('.textField').val('').focus(); //Clears the form after submittin
         }).fail((error) => {
           $("#tweet-error").text(error)
           console.error(error);
         })
-
     }
-
   });
-
- // renderTweets(data);
-
 });
 
 

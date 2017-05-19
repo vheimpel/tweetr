@@ -27,6 +27,11 @@ main {
   background-color: white;
 }
 
+h2 {
+  margin: 0;
+  /*padding: 10px;*/
+}
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
@@ -51,6 +56,7 @@ main {
     float: right;
     font-size: 16px;
     padding: 12px 20px;
+    border-radius: 3px;
 }
 
 .counter {
@@ -61,26 +67,42 @@ main {
   color: #E74C3C;
 }
 
+.counter.gone {
+  display: none;
+}
+
 .textField {
   width: 100%;
   height: 150px;
   margin-bottom: 20px;
+  margin-top: 10px;
   border: 1px solid #ccc;
+  border-radius: 3px;
   background-color: rgba(255, 255, 255, 0);
   color: #5DD39E;
   display: block;
+  resize: none;
 }
 
 .tweet-article {
   width: 100%;
-  height: 100%px;
+  height: 100%;
   margin: 20px 0;
   padding: 8px;
   border-top: 1px solid #ccc;
 }
 
 #tweet-form {
-  height: 255px;
+  height: 250px;
+  display: none;
+}
+
+#tweet-error {
+  font-size: 14px;
+  color: #E74C3C;
+}
+
+#tweet-error.gone {
   display: none;
 }
 

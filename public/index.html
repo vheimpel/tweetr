@@ -32,6 +32,15 @@
            $("#tweet-form").slideToggle(1000);
        });
    });
+
+   // $(document).ready(function(){
+   //     $("#save").click(function(){
+   //         $("#myform").submit();
+   //         $("#myform")[0].reset();
+   //      });
+
+   // });
+
    </script>
 
 
@@ -50,19 +59,21 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
     <section class="new-tweet">
-      <div id="tweet-error">
-        <!-- Errors appear here -->
-      </div>
+
         <form id="tweet-form">
         <h2>Compose Tweet</h2>
         <textarea class="textField" name="text" placeholder="What are you humming about?" class="tweetArea" id="tweet-input"></textarea>
         <input class="button" type="submit" value="Tweet">
+        <div id="tweet-error">
+          <!-- Errors appear here -->
+        </div>
         <span class="counter">140</span>
       </form>
 
       <div id="tweet-container">
         <!-- rendered dynamically from app.js -->
       </div>
+
     </section>
 
     </main>

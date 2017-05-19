@@ -5,7 +5,7 @@ $(document).ready(function() {
     $(".counter").text(remaining);
 
     if (remaining < 0) {
-      $(".counter").addClass("bad");
+      $(".counter").addClass("bad"); //Makes the counter go red
     } else {
       $(".counter").removeClass("bad");
     }
