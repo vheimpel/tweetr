@@ -1,16 +1,22 @@
 
 $(document).ready(function() {
   $( ".textField" ).on("keyup", function(event) {
-    var remaining = 140 - $(".textField").val().length;
-    $(".counter").text(remaining);
-
-    if (remaining < 0) {
-      $(".counter").addClass("bad"); //Makes the counter go red
-    } else {
-      $(".counter").removeClass("bad");
-    }
+    resetCounter();
   });
 });
+
+function resetCounter(){
+  $("#tweet-error").addClass("gone");
+  $(".counter").removeClass("gone");
+  var remaining = 140 - $(".textField").val().length;
+  $(".counter").text(remaining);
+
+  if (remaining < 0) {
+    $(".counter").addClass("bad"); //Makes the counter go red
+  } else {
+    $(".counter").removeClass("bad");
+  }
+}
 
 
 // jquery is a small library for dealing with browser specific api calls. - built on top of javascript
