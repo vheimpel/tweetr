@@ -92,6 +92,11 @@ loadTweets()
 
 $(document).ready(function() {
 
+  $("#compose-button").click(function(){
+      $("#tweet-form").slideToggle(1000);
+      $("#tweet-input").focus();
+  });
+
   $("#tweet-form").on("submit", (event) => {
     event.preventDefault();
     $("#tweet-error").text("")
