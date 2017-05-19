@@ -101,10 +101,10 @@ $(document).ready(function() {
     if (newTweetName == "") {
       $("#tweet-error").text("Please enter a tweet!")
       return
-    } else if (newTweetName.length > 140) {
-      $("#tweet-error").text("Tweet too long!")
-      return
-    } else {
+      } else if (newTweetName.length > 140) {
+        $("#tweet-error").text("Tweet too long!")
+        return
+      } else {
 
       $.ajax({
         url: '/tweets/new',
@@ -113,16 +113,16 @@ $(document).ready(function() {
         text: newTweetName
         }
 
-      }).done((tweet) => {
+        }).done((tweet) => {
         //process added tweet
-        const html = createTweetElement(tweet);
 
+        const html = createTweetElement(tweet);
         $('#tweet-container').prepend(html);
         $('#tweet-name').val('').focus();
-      }).fail((error) => {
-        $("#tweet-error").text(error)
-        console.error(error);
-      })
+        }).fail((error) => {
+          $("#tweet-error").text(error)
+          console.error(error);
+        })
 
     }
 

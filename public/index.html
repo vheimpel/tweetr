@@ -10,6 +10,8 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700" rel="stylesheet">
 
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
@@ -22,6 +24,18 @@
 
      <!-- composer-char-counter JS -->
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <script>
+   $(document).ready(function(){
+       $("#compose-button").click(function(){
+           $("#tweet-form").slideToggle(1000);
+       });
+   });
+   </script>
+
+
+
   </head>
 
   <body>
@@ -30,18 +44,17 @@
     <nav id="nav-bar">
       <img class="logo" src="/images/bird.png">
       <span class="header">Tweeter!</span>
-      <button id="compose-button">Compose</button>
+      <button id="compose-button"><i class="fa-pencil" aria-hidden="true"></i>Compose</button>
     </nav>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-
     <section class="new-tweet">
-      <h2>Compose Tweet</h2>
       <div id="tweet-error">
         <!-- Errors appear here -->
       </div>
-      <form id="tweet-form">
+        <form id="tweet-form">
+        <h2>Compose Tweet</h2>
         <textarea class="textField" name="text" placeholder="What are you humming about?" class="tweetArea" id="tweet-input"></textarea>
         <input class="button" type="submit" value="Tweet">
         <span class="counter">140</span>

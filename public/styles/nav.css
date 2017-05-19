@@ -35,8 +35,19 @@
 
 #compose-button {
   float: right;
-}
+  background-color: white; /* teal */
+  border: none;
+  color: #00A087;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  float: right;
+  font-size: 16px;
+  padding: 12px 20px;
+  vertical-align: middle;
+  margin-top: 15px;
 
+}
 
 
 /*
