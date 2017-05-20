@@ -54,7 +54,6 @@ h2 {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    float: right;
     font-size: 16px;
     padding: 12px 20px;
     border-radius: 3px;
@@ -67,6 +66,8 @@ h2 {
 
 .counter {
   color: #00A087;
+  float: right;
+
 }
 
 .counter.bad {
@@ -92,12 +93,10 @@ h2 {
   font-family: 'Roboto', sans-serif;
 }
 
-.tweet-article {
-  width: 100%;
-  height: 100%;
-  margin: 20px 0;
-  padding: 8px;
-  border-top: 1px solid #ccc;
+
+
+#tweet-container {
+
 }
 
 #tweet-form {
@@ -114,12 +113,35 @@ h2 {
   display: none;
 }
 
-.tweet-header {
+.tweet-article {
+  width: 100%;
+  height: 100%;
+  /*margin: 20px 0;*/
+  padding: 20px 8px;
+  border-top: 1px solid #ccc;
+}
+
+.header {
+  clear: both;
+}
+
+.tweet-avatar {
+  display: inline-block;
+  float: left;
+  margin-right: 8px;
+}
+
+.tweet-title {
   font-size: 18px;
+  display: inline-block;
+  position: relative;
+
 }
 
 .tweet-handle {
   font-size: 12px;
+  float: right;
+  display: block;
 }
 
 .tweet-body {
@@ -130,6 +152,20 @@ h2 {
   font-size: 10px;
 }
 
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.clearfix {display: inline-block;}
+/* Hides from IE-mac \*/
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+/* End hide from IE-mac */
+
 
 input:focus,
 select:focus,
@@ -138,17 +174,6 @@ button:focus {
     outline: none;
 }
 
-/*textarea:focus, input:focus {
-    color: white;
-}*/
-
-/*input, select, textarea{
-    color: white;
-}*/
-
-/*textarea:focus, input:focus {
-    color: white;
-}*/
 
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px white inset;

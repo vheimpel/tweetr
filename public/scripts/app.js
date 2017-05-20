@@ -67,9 +67,10 @@ $container.html(overallHtml)
 
 function createTweetElement(tweet) {
   let html = `
-      <article class="tweet-article">
-      <header class="tweet-header">${tweet.user.name}</header>
+      <article class="tweet-article clearfix">
+      <span class="tweet-avatar"><img src="${tweet.user.avatars.small}"></span>
       <span class="tweet-handle">${tweet.user.handle}</span>
+      <header class="tweet-title">${tweet.user.name}</header>
       <span class="tweet-body">${tweet.content.text}</span>
       <footer class="tweet-footer">${tweet.created_at}</h4></footer>
       </article>
@@ -82,7 +83,6 @@ function loadTweets() {
       url: '/tweets',
       method: 'GET',
       success: function (tweetsJson) {
-        console.log('Success: ', tweetsJson);
         renderTweets(tweetsJson)
       }
     })
@@ -100,14 +100,14 @@ $(document).ready(function() {
   $("#tweet-form").on("submit", (event) => {
     event.preventDefault();
     $("#tweet-error").text("")
-    const newTweetName = $('#tweet-input').val();
+    const newTweet = $('#tweet-input').val();
 
-    if (newTweetName == "") {
+    if (newTweet == "") {
       $("#tweet-error").text("Please enter a tweet!")
       $(".counter").addClass("gone"); //Removes the counter
       $("#tweet-error").removeClass("gone")
       return
-      } else if (newTweetName.length > 140) {
+      } else if (newTweet.length > 140) {
         $("#tweet-error").text("Tweet too long!")
         $(".counter").addClass("gone"); //Removes the counter
         $("#tweet-error").removeClass("gone")
@@ -119,7 +119,7 @@ $(document).ready(function() {
         url: '/tweets/new',
         method: 'POST',
         data: {
-        text: newTweetName
+        text: newTweet
         }
 
         }).done((tweet) => {
