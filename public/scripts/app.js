@@ -66,13 +66,23 @@ $container.html(overallHtml)
 }
 
 function createTweetElement(tweet) {
+  let dateFromDB = new Date(tweet.created_at).toString().slice(0, 15);
   let html = `
       <article class="tweet-article clearfix">
-      <span class="tweet-avatar"><img src="${tweet.user.avatars.small}"></span>
-      <span class="tweet-handle">${tweet.user.handle}</span>
-      <header class="tweet-title">${tweet.user.name}</header>
-      <span class="tweet-body">${tweet.content.text}</span>
-      <footer class="tweet-footer">${tweet.created_at}</h4></footer>
+        <header class="tweet-header">
+          <img class="tweet-avatar" src="${tweet.user.avatars.small}"></img>
+          <span class="tweet-handle">${tweet.user.handle}</span>
+          <span class="tweet-title">${tweet.user.name}</span>
+        </header>
+        <span class="tweet-body">${tweet.content.text}</span>
+        <footer class="tweet-footer clearfix">
+          <span class="tweet-date">${dateFromDB}</span>
+          <span class="tweet-icons">
+            <i class="fa fa-flag"></i>&nbsp;
+            <i class="fa fa-retweet"></i>&nbsp;
+            <i class="fa fa-heart"></i>
+          </span>
+          </footer>
       </article>
       `;
   return html;
