@@ -69,19 +69,19 @@ function createTweetElement(tweet) {
   let dateFromDB = new Date(tweet.created_at).toString().slice(0, 15);
   let html = `
       <article class="tweet-article clearfix">
-        <header class="tweet-header">
+        <header class="tweet-header clearfix">
           <img class="tweet-avatar" src="${tweet.user.avatars.small}"></img>
           <span class="tweet-handle">${tweet.user.handle}</span>
           <span class="tweet-title">${tweet.user.name}</span>
         </header>
-        <span class="tweet-body">${tweet.content.text}</span>
+        <div class="tweet-body clearfix">${tweet.content.text}</div>
         <footer class="tweet-footer clearfix">
-          <span class="tweet-date">${dateFromDB}</span>
-          <span class="tweet-icons">
+          <div class="tweet-date">${dateFromDB}</div>
+          <div class="tweet-icons">
             <i class="fa fa-flag"></i>&nbsp;
             <i class="fa fa-retweet"></i>&nbsp;
             <i class="fa fa-heart"></i>
-          </span>
+          </div>
           </footer>
       </article>
       `;
@@ -103,7 +103,7 @@ loadTweets()
 $(document).ready(function() {
 
   $("#compose-button").click(function(){
-      $("#tweet-form").slideToggle(1000);
+      $("#tweet-form").slideToggle(500);
       $("#tweet-input").focus();
   });
 
