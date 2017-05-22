@@ -6,9 +6,9 @@ Tweetr uses HTML, CSS, JS, jQuery and AJAX on the front-end, and Node, Express a
 
 ## Final Product
 
-![tweetr_feed] (https://github.com/vheimpel/tweetr/blob/master/docs/Tweetr-1.png)
+![tweetr_feed](https://github.com/vheimpel/tweetr/blob/master/docs/Tweetr-1.png)
 
-![tweetr_feed_with_compose_text_field] (https://github.com/vheimpel/tweetr/blob/master/docs/Tweetr-2.png)
+![tweetr_feed_with_compose_text_field](https://github.com/vheimpel/tweetr/blob/master/docs/Tweetr-2.png)
 
 
 ## Dependencies
