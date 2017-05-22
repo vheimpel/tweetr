@@ -1,6 +1,6 @@
 
 $(document).ready(function() {
-  $( ".textField" ).on("keyup", function(event) {
+  $( "#tweet-input" ).on("keyup", function(event) {
     resetCounter();
   });
 });
@@ -8,7 +8,7 @@ $(document).ready(function() {
 function resetCounter(){
   $("#tweet-error").addClass("gone");
   $(".counter").removeClass("gone");
-  var remaining = 140 - $(".textField").val().length;
+  var remaining = 140 - $("#tweet-input").val().length;
   $(".counter").text(remaining);
 
   if (remaining < 0) {

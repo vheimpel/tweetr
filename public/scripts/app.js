@@ -111,6 +111,7 @@ $(document).ready(function() {
     event.preventDefault();
     $("#tweet-error").text("")
     const newTweet = $('#tweet-input').val();
+    console.log("We got to line 114")
 
     if (newTweet == "") {
       $("#tweet-error").text("Please enter a tweet!")
@@ -137,7 +138,7 @@ $(document).ready(function() {
 
         const html = createTweetElement(tweet);
         $('#tweet-container').prepend(html);
-        $('.textField').val('').focus(); //Clears the form after submittin
+        $('#tweet-input').val('').focus(); //Clears the form after submittin
         resetCounter();
         }).fail((error) => {
           $("#tweet-error").text(error)
